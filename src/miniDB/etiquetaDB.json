@@ -1,0 +1,45 @@
+{
+  "dados": [
+    {
+      "dados": {
+        "nome": "Teste",
+        "codigo": "3",
+        "altura": 40,
+        "largura": 50,
+        "espacamentoSup": 0,
+        "espacamentoInf": 0,
+        "espacamentoEsq": 0,
+        "espacamentoDir": 0,
+        "coluna": 3,
+        "espColuna": 5
+      },
+      "campo": {
+        "secao": [
+          {},
+          {
+            "largura": "2",
+            "espacamentoEsq": 2
+          }
+        ],
+        "linha": [
+          {
+            "secao": 1,
+            "espacamentoEsq": 19,
+            "espacamentoInf": 17,
+            "espLinha": 18,
+            "tipoFont": 0,
+            "tamanFont": 1
+          },
+          {
+            "tipoFont": 0,
+            "tamanFont": 5,
+            "espacamentoEsq": 0,
+            "secao": 1,
+            "espacamentoInf": 25
+          }
+        ]
+      },
+      "id": 1
+    }
+  ]
+}
