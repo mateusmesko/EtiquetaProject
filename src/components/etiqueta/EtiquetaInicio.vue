@@ -6,6 +6,7 @@
         <p></p>
 
         <v-btn color="red" dark @click="irParaInicio">Voltar</v-btn>
+        
     </div>
 </template>
 

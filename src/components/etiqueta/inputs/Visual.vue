@@ -8,7 +8,7 @@
                         `font-size:${etiqueta.campo.linha[i].tipoFont+etiqueta.campo.linha[i].tamanFont}mm;
                          margin-left:${etiqueta.campo.linha[i].espacamentoEsq+etiqueta.campo.secao[etiqueta.campo.linha[i].secao].espacamentoEsq}mm;
                          top:${etiqueta.campo.linha[i].espacamentoInf}px`">
-                         {{etiqueta.campo.linha[i].espacamentoEsq+etiqueta.campo.secao[etiqueta.campo.linha[i].secao].espacamentoEsq}}
+                         CAMPO{{i+1}}
                         </div>
                    </div> 
                 </div>      

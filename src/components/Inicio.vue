@@ -1,11 +1,9 @@
 <template>
     <div>
-           inicio
+           <h2>INICIO</h2>
            <br>
-           <v-btn
-            @click="irParaInicio"
-            color="green">
-            Ir para configurador de etiquetas
+            <v-btn @click="irParaInicio" color="green">
+                Ir para configurador de etiquetas
             </v-btn>
     </div>
 </template>

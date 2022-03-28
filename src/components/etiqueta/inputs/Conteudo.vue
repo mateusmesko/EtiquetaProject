@@ -4,13 +4,14 @@
         <div v-if="enviar!=undefined">
             {{etiquetaRecebe()}}
         </div>
+        <!--valores inputados da seção-->
         <h3 style="margin-left:7%" >Dados da secao:</h3>
         <v-container v-for="(secoes, i) in campo.secao" :key="i"> <b>seção:{{i+1}}</b>
             <v-row  >
-                
                 <v-col cols="12" md="3"  > 
-                    <v-text-field type="number" v-model="campo.secao[i].largura" label="Nome" required/>     
+                    <v-text-field type="number" v-model="campo.secao[i].largura" label="largura" required/>     
                 </v-col>
+
                 <v-col cols="12" md="3"  >
                     <v-text-field type="number" v-model.number="campo.secao[i].espacamentoEsq" label="espaçamento da esquerda" required/>
                 </v-col>
@@ -20,14 +21,13 @@
             <p></p>
           
         </v-container>
-  <v-btn style="margin-left:80%" color="green" @click="adicionarSecao">+adicionar secao</v-btn>
+    <v-btn style="margin-left:80%" color="green" @click="adicionarSecao">+adicionar secao</v-btn>
 
+    <!--valores inputados das linhas-->
     <h3 style="margin-left:7%">informações da etiqueta:</h3>
 
-    <v-container v-for="(linha, i) in campo.linha" :key="i" > Linha:{{i+1}}
-      
+    <v-container v-for="(linha, i) in campo.linha" :key="i" > <b>Linha:{{i+1}}</b>
             <v-row  >
-              
                 <v-col cols="12" md="3"  > 
                     <v-select v-model="campo.linha[i].tipo" :items="campoOpcoes" label="campo" required/>     
                 </v-col>
@@ -44,7 +44,6 @@
                     <v-text-field type="number" v-model.number="campo.linha[i].quebraTexto" label="Posição de quebra de texto" required/>     
                 </v-col>
 
-                
                 <v-col cols="12" md="3"  > 
                     <v-text-field type="number" v-model.number="campo.linha[i].espLinha" label="Espaçamento entre linhas (mm)" required/>     
                 </v-col>
@@ -58,9 +57,7 @@
                 </v-col>
 
                 <v-col cols="12" md="3"  > 
-                   <v-text-field type="number"  v-model.number="campo.linha[i].secao" :label="`Seção`" required/>
-                        
-                
+                   <v-text-field type="number"  v-model.number="campo.linha[i].secao" :label="`Seção`" required/>        
                 </v-col>
 
                 <b></b>
@@ -68,50 +65,19 @@
             </v-row>
             <p></p>
            
-        
     </v-container>
      <v-btn style="margin-left:80%" color="green" @click="adicionarLinha">+adicionar linha</v-btn>
 
     </div>
 </template>
+
 <script>
+import CampoMX from './conteudoMX'
+
 export default {
-    props:['enviar'],
-    data(){
-        return{
-            campo:
-            {
-                secao:[],
-                linha:[]
-            },
-            campoOpcoes:['Nome da empresa', 'Código do produto', 'Nome do produto', 'Código + Nome do produto', 'Categoria do produto', 'Valor do produto', 'Codigo de barras', 'Qr code', 'Texto personalizado'],
-            tipos:[0,1,2,3,4,5,6,7,8],
-            tamanhos:[1,2,3,4,5,6,7,8,9]
-        }
-    },
-    methods:{
-        adicionarSecao(){
-            this.campo.secao.push({
-                 nome:this.campo.secao.largura
-            })
-        }, adicionarLinha(){
-            this.campo.linha.push({
-                 nome:this.campo.linha.largura
-            })
-        },
-        etiquetaRecebe(){
-            this.campo=this.enviar.campo
-		}
-    },
-    watch:{
-		campo:{
-			deep:true,
-			handler(){
-				this.$emit('ReceivedCampos', this.campo)
-			}
-		}
-	},
-}
+        mixins:[CampoMX]
+    }
+
 </script>
 
 <style>

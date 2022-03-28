@@ -4,7 +4,7 @@ import Inicio from './components/Inicio.vue'
 
 import Etiqueta from './components/etiqueta/EtiquetaInicio'
 import EtiquetaLista from './components/etiqueta/EtiquetaLista'
-import EtiquetaDetalhe from './components/etiqueta/EtiquetaDetalhe.vue'
+import EtiquetaDetalhe from './components/etiqueta/EtiquetaEditar'
 import EtiquetaCriar from './components/etiqueta/EtiquetaCriar'
 
 Vue.use(Router)
